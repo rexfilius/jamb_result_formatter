@@ -1,3 +1,18 @@
+bool isJambRegNumberCorrect(String regNumber) {
+  try {
+    var firstPart = int.parse(regNumber.substring(0, 8));
+    var secondPart = regNumber.substring(8, regNumber.length);
+    if (firstPart.toString().length == 8 && secondPart.length == 2) {
+      return true;
+    }
+  } on FormatException {
+    print("Error! - Jamb number must be 8 digits and 2 letters\n");
+  } on RangeError {
+    print("Error! - Registeration number must be 10 characters long");
+  }
+  return false;
+}
+
 Map<int, String> jambSubjects = {
   1: "Agriculture",
   2: "Arabic",
