@@ -55,3 +55,10 @@ Candidate? getCandidateDetails() {
 
   return candidate;
 }
+
+void printCandidateDetails(Candidate? candidate) {
+  print("\n---Here is your JAMB result---");
+  print(
+      "Name: ${candidate?.firstName} ${candidate?.middleName} ${candidate?.lastName}");
+  print("Registeration Number: ${candidate?.registerationNumber}");
+}

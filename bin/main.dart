@@ -2,8 +2,16 @@ import 'models/models.dart';
 
 void main() {
   welcomeMessage();
+
   Candidate? candidate = getCandidateDetails();
-  print(candidate);
+  List<Score> scores = getScoreDetails();
+
+  printCandidateDetails(candidate);
+  printScoreDetails(scores);
+
+  int aggregate =
+      scores[0].number + scores[1].number + scores[2].number + scores[3].number;
+  printAggregateScore(aggregate);
 }
 
 void welcomeMessage() {
